@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>21 Savage Fan Site</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="page-header">
+      <h1><span class="fa fa-anchor"></span> Zoe's Hair Studio</h1>
+      <!-- <a href="/logout" class="btn btn-default btn-sm">Logout</a> -->
+    </div>
+
+    <!-- <div class="row"> -->
+
+      <!-- LOCAL INFORMATION -->
+      <!-- <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+            </div>
+        </div> -->
+
+      <div class="newApp">
+        <h3>Upcoming appointments</h3>
+        <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <p>Artist</p>
+              <span>
+                <%= messages[i].barber %>
+              </span>
+              <p>Service</p>
+              <span>
+                <%= messages[i].cut %>
+              </span>
+              <p>Time</p>
+              <span>
+                <%= messages[i].time %>
+              </span>
+              <p>Additional Service</p>
+              <span>
+                <%= messages[i].extra %>
+              </span>
+              <!-- <span>
+                <%= messages[i].thumbUp - messages[i].thumbDown %>
+              </span> -->
+
+              <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+              
+                <!-- <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> -->
+              
+                <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+            </li>
+            <% } %>
+        </ul>
+
+        <!-- <h2>Book an appointment</h2> -->
+        <% if (user.local.email) { %>
+          <form class="bookApp" action="/messages" method="POST">
+            <div>
+              <legend>Choose Your Stylist</legend>
+              <div>
+                <input type="radio" name="weapon" value="Sim">
+                <label for="Sim">Sim</label>
+
+                <input type="radio" name="weapon" value="Fab">
+                <label for="Fab">Fab</label>
+
+                <input type="radio" name="weapon" value="Aise">
+                <label for="Aise">Aise</label>
+
+                <input type="radio" name="weapon" value="Adrian">
+                <label for="Adrian">Adrian</label>
+
+                <input type="radio" name="weapon" value="Jean">
+                <label for="Jean">Jean</label>
+
+                <input type="radio" name="weapon" value="Ro">
+                <label for="Ro">Ro</label>
+              </div>
+              </section>
+
+              <section>
+
+                <div>
+                  <legend>Preffered Style</legend>
+                  <div>
+                    <input type="radio" name="city" value="Taper">
+                    <label for="Taper">Taper Fade w/ razor</label>
+
+                    <input type="radio" name="city" value="Fade">
+                    <label for="Fade">All Around Fade w/ razor</label>
+
+                    <input type="radio" name="city" value="Shape Up">
+                    <label for="Shape">Shape-Up w/ razor</label>
+
+                    <input type="radio" name="city" value="Clean Shave">
+                    <label for="Shave">Clean Shave (Bald/Facial shave)</label>
+
+                    <input type="radio" name="city" value="Vip Service">
+                    <label for="Vip">Vip Service</label>
+                  </div>
+              </section>
+
+              <section>
+                <div>
+                  <legend>Select a Time slot</legend>
+                  <div>
+                    <input type="radio" name="money" value="1pm">
+                    <label for="1pm">1pm</label>
+
+                    <input type="radio" name="money" value="2pm">
+                    <label for="2pm">2pm</label>
+
+                    <input type="radio" name="money" value="3pm">
+                    <label for="3pm">3pm</label>
+
+                    <input type="radio" name="money" value="4pm">
+                    <label for="4pm">4pm</label>
+
+                    <input type="radio" name="money" value="5pm">
+                    <label for="5pm">5pm</label>
+
+                    <input type="radio" name="money" value="6pm">
+                    <label for="6pm">6pm</label>
+
+                    <input type="radio" name="money" value="7pm">
+                    <label for="7pm">7pm</label>
+
+                    <input type="radio" name="money" value="8pm">
+                    <label for="8pm">8pm</label>
+                  </div>
+              </section>
+              <section>
+                <div>
+                  <legend>Extra Service?</legend>
+                  <div>
+                    <input type="radio" name="would" value="Hot Towel">
+                    <label for="Hot Towel">Hot towel</label>
+
+                    <input type="radio" name="would" value="Hairline enhancments">
+                    <label for="HairlineE">Hairline enhancments </label>
+
+                    <input type="radio" name="would" value="Wash and Rinse">
+                    <label for="Wash"> Wash and Rinse</label>
+
+                    <input type="radio" name="would" value="Beard oil">
+                    <label for="Beard">Beard oil and trim</label>
+
+                    <input type="radio" name="would" value="Facial massage">
+                    <label for="Face massage">Facial massage </label>
+                  </div>
+              </section>
+              <button>Submit</button>
+          </form>
+
+         
+          </section>
+
+      </div>
+      <% } %>
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
